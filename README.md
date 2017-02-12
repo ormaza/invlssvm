@@ -1,6 +1,6 @@
 # invlssvm
 
-Least Square Support Vector Machine (LS-SVM) is an optimal margin classifier that requires a set of input parameters that, if correctly selected, will cause the machine to achieve good results in its predictions. Cross-Validation (CV) is a technique that assists in this selection, calculating the performance of each set of parameters tested. In spite of its importance, its application requires a high computational cost, making it impossible to execute in more modest hardware. The CV requires the inversion of large data matrices, called kernel matrix. As a solution to this problem, this work will propose the technique of Inversion of Matrices in Blocks. This technique will aid in the optimization of CV, allocating less memory for this calculation, and obtaining similar results. All necessary steps will be presented to adapt the original algorithm, as well as tests in time and memory consumption with the purpose of validating the proposal.
+The Least Squares Support Vector Machine (LSSVM) requires, as part of its cross-validation algorithm, the calculation of the inverse of the kernel matrix. Although the whole inverse is computed only blocks of elements close to its main diagonal are used in the cross-validation. We present a solution for the computation of the needed inverse blocks as a way to decrease the memory footprint of the algorithm.
 
 ### Requires
 
