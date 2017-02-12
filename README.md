@@ -7,3 +7,8 @@ Least Square Support Vector Machine (LS-SVM) is an optimal margin classifier tha
 ##### LS-SVMlab
 ##### Armadillo
 ##### Matlab and C-Mex compilers
+
+### Documents
+
+##### TCC FINAL (pt-br)
+##### ijcnn article (en-us)
