@@ -1,14 +1,7 @@
 # invlssvm
 
-The Least Squares Support Vector Machine (LSSVM) requires, as part of its cross-validation algorithm, the calculation of the inverse of the kernel matrix. Although the whole inverse is computed only blocks of elements close to its main diagonal are used in the cross-validation. We present a solution for the computation of the needed inverse blocks as a way to decrease the memory footprint of the algorithm.
+A Validação Cruzada requer a inversão de grandes matrizes de dados, denominadas matrizes de kernel. Esse trabalho propõe a técnica da Inversão de Matrizes em Blocos, que auxiliará na otimização da CV, alocando menos memória para esse cálculo. Nele estão explicados todos os passos necessários para adaptação do algoritmo original, assim como testes em consumo de tempo e memória com o objetivo de validar a proposta.
 
-### Requires
+Os testes foram executados no MATLAB utilizando o toolbox LS-SVMlab. O algoritmo BRI havia sido desenvolvido em C++ e utilizava a biblioteca de álgebra linear Armadillo para manipulação de matrizes. Tanto o MATLAB quanto o Armadillo utilizam no seu background as bibliotecas BLAS e LAPACK, portanto as respostas para implementações semelhantes aplicadas a essas duas plataformas seriam exatamente iguais. Faltava agora uma forma de fazer o LS-SVMlab e o BRI se comunicarem, e para isso foi utilizado o C-Mex. 
 
-##### LS-SVMlab
-##### Armadillo
-##### Matlab and C-Mex compilers
-
-### Documents
-
-##### TCC FINAL (pt-br)
-##### ijcnn article (en-us)
+Foram necessárias modificações no arquivo "crossvalidatelssvm.m" do toolbox e do arquivo "BRI.cpp". Elas estão descritas no documento TCC FINAL dentro da pasta "documents", e os códigos podem ser encontrados dentro da pasta "sources". Para execução deste projeto será preciso copiar ambos os arquivos para dentro do toolbox LS-SVMlab, e executar o arquivo "script.m" através do MATLAB. Além disso, as bibliotecas e compiladores descritos no documento devem estar instaladas.
